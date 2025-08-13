@@ -216,8 +216,43 @@ const today = new Date();
 	}
 	
 	@media (max-width: 768px) {
+		footer {
+			padding: 3rem 1.5rem 1.5rem;
+			margin-top: 3rem;
+		}
+		
+		.footer-container {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2rem 1rem;
+		}
+		
+		.footer-section {
+			text-align: left;
+		}
+		
+		.footer-section h3 {
+			margin-bottom: 1.2rem;
+		}
+		
+		.social-links {
+			margin: 2rem 0;
+		}
+		
+		.footer-bottom {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+	}
+	
+	@media (max-width: 600px) {
+		footer {
+			padding: 2.5rem 1rem 1rem;
+			margin-top: 2rem;
+		}
+		
 		.footer-container {
 			grid-template-columns: 1fr;
+			gap: 2rem;
 		}
 		
 		.footer-section {
@@ -236,6 +271,15 @@ const today = new Date();
 		
 		.footer-links li:hover {
 			transform: none;
+		}
+		
+		.social-links {
+			margin: 1.5rem 0;
+		}
+		
+		.footer-bottom {
+			padding-top: 1.5rem;
+			font-size: 0.8rem;
 		}
 	}
 </style>

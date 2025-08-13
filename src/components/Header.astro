@@ -5,37 +5,75 @@ import HeaderLink from './HeaderLink.astro';
 
 <header>
 	<nav>
-		<h2><a href="/"><span class="logo-text">{SITE_TITLE}</span></a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Accueil</HeaderLink>
-			<HeaderLink href="/services">Services</HeaderLink>
-			<HeaderLink href="/tarifs">Tarifs</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/contact" class="contact-button">Prendre RDV</HeaderLink>
+		<div class="logo-container">
+			<h2><a href="/"><span class="logo-text">{SITE_TITLE}</span></a></h2>
 		</div>
-		<div class="social-links">
-			<a href="https://instagram.com/" target="_blank" aria-label="Instagram">
-				<span class="sr-only">Instagram</span>
-				<svg class="w-[32px] h-[32px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-					<path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
-				</svg>
-			</a>
-			<a href="https://facebook.com/" target="_blank" aria-label="Facebook">
-				<span class="sr-only">Facebook</span>
-				<svg class="w-[32px] h-[32px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-					<path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/>
-				</svg>
-			</a>
+		
+		<button id="menu-toggle" aria-label="Menu principal" class="menu-toggle">
+			<span class="hamburger"></span>
+		</button>
+		
+		<div id="nav-links" class="nav-links">
+			<div class="internal-links">
+				<HeaderLink href="/">Accueil</HeaderLink>
+				<HeaderLink href="/services">Services</HeaderLink>
+				<HeaderLink href="/tarifs">Tarifs</HeaderLink>
+				<HeaderLink href="/blog">Blog</HeaderLink>
+				<HeaderLink href="/contact" class="contact-button">Prendre RDV</HeaderLink>
+			</div>
+			<div class="social-links">
+				<a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+					<span class="sr-only">Instagram</span>
+					<svg class="w-[32px] h-[32px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+						<path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+					</svg>
+				</a>
+				<a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+					<span class="sr-only">Facebook</span>
+					<svg class="w-[32px] h-[32px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+						<path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/>
+					</svg>
+				</a>
+			</div>
 		</div>
 	</nav>
 </header>
+
+<script>
+	// Menu toggle functionality
+	document.addEventListener('DOMContentLoaded', () => {
+		const menuToggle = document.getElementById('menu-toggle');
+		const navLinks = document.getElementById('nav-links');
+		
+		menuToggle?.addEventListener('click', () => {
+			menuToggle.classList.toggle('active');
+			navLinks?.classList.toggle('show');
+			document.body.classList.toggle('menu-open');
+		});
+		
+		// Close menu when clicking on a link (mobile)
+		const navLinkElements = navLinks?.querySelectorAll('a');
+		navLinkElements?.forEach(link => {
+			link.addEventListener('click', () => {
+				menuToggle?.classList.remove('active');
+				navLinks?.classList.remove('show');
+				document.body.classList.remove('menu-open');
+			});
+		});
+	});
+</script>
+
 <style>
 	header {
 		margin: 0;
 		padding: 0 1em;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		position: sticky;
+		top: 0;
+		z-index: 1000;
 	}
+	
 	h2 {
 		margin: 0;
 		font-size: 1.2em;
@@ -45,15 +83,39 @@ import HeaderLink from './HeaderLink.astro';
 	h2 a.active {
 		text-decoration: none;
 	}
+	
 	.logo-text {
 		font-weight: 700;
 		color: var(--accent);
 	}
+	
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		padding: 0.5rem 0;
+		position: relative;
 	}
+	
+	.logo-container {
+		display: flex;
+		align-items: center;
+		z-index: 1001;
+	}
+	
+	.nav-links {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-grow: 1;
+	}
+	
+	.internal-links {
+		display: flex;
+		align-items: center;
+		margin-left: 2rem;
+	}
+	
 	nav a {
 		padding: 1em 0.5em;
 		color: rgb(var(--black));
@@ -62,30 +124,139 @@ import HeaderLink from './HeaderLink.astro';
 		font-weight: 600;
 		transition: all 0.3s ease;
 	}
+	
 	nav a:hover {
 		color: var(--accent);
 	}
+	
 	nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
+	
 	.contact-button {
 		background-color: var(--accent);
 		color: white !important;
 		padding: 0.5em 1em;
 		border-radius: 4px;
 		margin-left: 0.5em;
+		border-bottom: none !important;
 	}
+	
 	.contact-button:hover {
 		background-color: var(--accent-dark);
 	}
+	
 	.social-links,
 	.social-links a {
 		display: flex;
 	}
-	@media (max-width: 720px) {
+	
+	.menu-toggle {
+		display: none;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 10px;
+		z-index: 1001;
+	}
+	
+	.hamburger {
+		display: block;
+		position: relative;
+		width: 24px;
+		height: 2px;
+		background: rgb(var(--black));
+		transition: all 0.3s ease-in-out;
+	}
+	
+	.hamburger::before,
+	.hamburger::after {
+		content: '';
+		position: absolute;
+		width: 24px;
+		height: 2px;
+		background: rgb(var(--black));
+		transition: all 0.3s ease-in-out;
+	}
+	
+	.hamburger::before {
+		transform: translateY(-8px);
+	}
+	
+	.hamburger::after {
+		transform: translateY(8px);
+	}
+	
+	.menu-toggle.active .hamburger {
+		background: transparent;
+	}
+	
+	.menu-toggle.active .hamburger::before {
+		transform: rotate(45deg);
+	}
+	
+	.menu-toggle.active .hamburger::after {
+		transform: rotate(-45deg);
+	}
+	
+	/* Mobile styles */
+	@media (max-width: 768px) {
+		.menu-toggle {
+			display: block;
+		}
+		
+		.nav-links {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: white;
+			flex-direction: column;
+			justify-content: center;
+			padding: 2rem;
+			transform: translateX(100%);
+			transition: transform 0.3s ease-in-out;
+			height: 100vh;
+			z-index: 1000;
+		}
+		
+		.nav-links.show {
+			transform: translateX(0);
+		}
+		
+		.internal-links {
+			flex-direction: column;
+			align-items: center;
+			margin-left: 0;
+			width: 100%;
+		}
+		
+		.internal-links a {
+			width: 100%;
+			text-align: center;
+			padding: 1rem;
+			border-bottom: 1px solid rgba(var(--gray-light), 0.5);
+		}
+		
+		.internal-links a:last-child {
+			border-bottom: none;
+		}
+		
+		.contact-button {
+			margin: 1rem 0 0 0;
+			width: 80%;
+			text-align: center;
+		}
+		
 		.social-links {
-			display: none;
+			margin-top: 2rem;
+			justify-content: center;
+		}
+		
+		body.menu-open {
+			overflow: hidden;
 		}
 	}
 </style>

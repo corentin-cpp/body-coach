@@ -1,19 +1,21 @@
-# Astro Starter Kit: Blog
+# Site Web Coach Sportif avec Astro
 
-```sh
-npm create astro@latest -- --template blog
-```
+Site web professionnel pour coach sportif réalisé avec Astro, offrant une vitesse exceptionnelle et une expérience utilisateur optimale sur tous les appareils.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Astro](https://img.shields.io/badge/Astro-3.x-orange.svg)
+![Responsive](https://img.shields.io/badge/Responsive-Yes-success.svg)
 
-Features:
+## Fonctionnalités
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+- ✅ Design moderne et professionnel orienté fitness
+- ✅ Entièrement responsive pour mobiles, tablettes et ordinateurs
+- ✅ Navigation intuitive avec menu hamburger sur mobile
+- ✅ Optimisation SEO avec balises méta et structure sémantique
+- ✅ Blog intégré pour partager conseils et articles
+- ✅ Formulaire de contact pour les demandes de clients
+- ✅ Performances optimisées (100/100 Lighthouse)
+- ✅ Design adaptatif pour une expérience utilisateur optimale
 
 ## 🚀 Project Structure
 

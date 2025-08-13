@@ -276,8 +276,16 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	
 	/* Responsive adjustments */
 	@media (max-width: 768px) {
+		.hero {
+			padding: 5rem 1rem;
+		}
+		
 		.hero h1 {
-			font-size: 2.5rem;
+			font-size: 2.2rem;
+		}
+		
+		.hero-subtitle {
+			font-size: 1.2rem;
 		}
 		
 		.about-grid {
@@ -286,6 +294,62 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		
 		.about-content {
 			padding-right: 0;
+			order: 2;
+		}
+		
+		.about-image {
+			order: 1;
+			margin-bottom: 2rem;
+		}
+		
+		.feature-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+		
+		.testimonial-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.cta-section h2 {
+			font-size: 1.8rem;
+		}
+		
+		.features,
+		.about-me,
+		.testimonials,
+		.cta-section {
+			padding: 3rem 0;
+		}
+	}
+	
+	/* Small mobile devices */
+	@media (max-width: 480px) {
+		.hero {
+			padding: 4rem 0.75rem;
+		}
+		
+		.hero h1 {
+			font-size: 1.8rem;
+		}
+		
+		.hero-subtitle {
+			font-size: 1rem;
+			margin-bottom: 1.5rem;
+		}
+		
+		.cta-button {
+			padding: 0.75rem 1.5rem;
+			font-size: 0.9rem;
+		}
+		
+		.placeholder-image {
+			height: 300px;
+		}
+		
+		.feature-card,
+		.testimonial-card {
+			padding: 1.5rem;
 		}
 	}
 </style>
