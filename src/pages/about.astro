@@ -1,63 +1,480 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={`À propos | ${SITE_TITLE}`} description="Découvrez mon parcours et ma philosophie de coaching" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="about-header">
+				<div class="about-header-content">
+					<h1>À propos</h1>
+					<p class="header-subtitle">Découvrez mon parcours et ma passion pour le fitness</p>
+				</div>
+			</section>
+			
+			<section class="profile-section">
+				<div class="profile-grid">
+					<div class="profile-image">
+						<!-- Remplacez par votre propre image -->
+						<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop" alt="Portrait du coach" />
+					</div>
+					<div class="profile-content">
+						<h2>Mon histoire</h2>
+						<p>Coach sportif passionné depuis plus de 10 ans, j'ai consacré ma carrière à aider les gens à transformer leur vie grâce au fitness et à une nutrition adaptée. Mon parcours a débuté dans les sports de compétition où j'ai appris l'importance de la discipline, de la persévérance et d'une approche scientifique de l'entraînement.</p>
+						<p>Diplômé en Sciences et Techniques des Activités Physiques et Sportives (STAPS) et certifié en nutrition sportive, j'ai développé une approche holistique qui intègre l'entraînement physique, la nutrition et le bien-être mental.</p>
+						<p>Ma philosophie est simple : chaque personne est unique et mérite un accompagnement personnalisé. Je ne crois pas aux solutions miracle ni aux régimes drastiques, mais à l'établissement d'habitudes saines et durables qui transformeront votre corps et votre esprit.</p>
+					</div>
+				</div>
+			</section>
+			
+			<section class="philosophy-section">
+				<h2 class="section-title">Ma philosophie</h2>
+				<div class="philosophy-cards">
+					<div class="philosophy-card">
+						<div class="card-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 17l3-2.94c-.39-.04-.68-.06-1-.06-2.67 0-8 1.34-8 4v2h9l-3-3zm2-5c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4M15.47 20.5L12 17l1.4-1.41 2.07 2.08 5.13-5.17 1.4 1.41z"/></svg>
+						</div>
+						<h3>Personnalisation</h3>
+						<p>Je crois en l'individualisation complète de chaque programme. Votre corps, votre historique, vos objectifs et vos contraintes sont uniques.</p>
+					</div>
+					
+					<div class="philosophy-card">
+						<div class="card-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+						</div>
+						<h3>Approche globale</h3>
+						<p>Le fitness va au-delà de la salle de sport. J'intègre l'entraînement, la nutrition et le bien-être mental dans une approche holistique.</p>
+					</div>
+					
+					<div class="philosophy-card">
+						<div class="card-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg>
+						</div>
+						<h3>Progression durable</h3>
+						<p>Je privilégie des changements progressifs et durables plutôt que des transformations rapides mais éphémères. La constance est la clé.</p>
+					</div>
+					
+					<div class="philosophy-card">
+						<div class="card-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+						</div>
+						<h3>Accompagnement humain</h3>
+						<p>Le coaching va au-delà des exercices. L'écoute, la motivation et le soutien psychologique font partie intégrante de ma méthode.</p>
+					</div>
+				</div>
+			</section>
+			
+			<section class="certifications-section">
+				<h2 class="section-title">Mes certifications</h2>
+				<div class="certifications-grid">
+					<div class="certification-item">
+						<div class="certification-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+						</div>
+						<div class="certification-content">
+							<h3>Licence STAPS</h3>
+							<p>Université de Paris - Spécialité Entraînement Sportif</p>
+						</div>
+					</div>
+					
+					<div class="certification-item">
+						<div class="certification-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+						</div>
+						<div class="certification-content">
+							<h3>Coach Personnel Certifié</h3>
+							<p>National Strength and Conditioning Association (NSCA)</p>
+						</div>
+					</div>
+					
+					<div class="certification-item">
+						<div class="certification-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+						</div>
+						<div class="certification-content">
+							<h3>Spécialiste en Nutrition Sportive</h3>
+							<p>International Sports Sciences Association (ISSA)</p>
+						</div>
+					</div>
+					
+					<div class="certification-item">
+						<div class="certification-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+						</div>
+						<div class="certification-content">
+							<h3>Certification en Premiers Secours</h3>
+							<p>Croix-Rouge Française - PSC1</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="specialties-section">
+				<h2 class="section-title">Mes spécialités</h2>
+				<div class="specialties-grid">
+					<div class="specialty-item">
+						<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop" alt="Perte de poids" />
+						<div class="specialty-overlay">
+							<h3>Perte de poids</h3>
+							<p>Approche scientifique combinant cardio, renforcement et nutrition adaptée</p>
+						</div>
+					</div>
+					
+					<div class="specialty-item">
+						<img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-4.0.3&auto=format&fit=crop" alt="Musculation" />
+						<div class="specialty-overlay">
+							<h3>Musculation</h3>
+							<p>Programmes structurés pour développer force et hypertrophie</p>
+						</div>
+					</div>
+					
+					<div class="specialty-item">
+						<img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&auto=format&fit=crop" alt="Réathlétisation" />
+						<div class="specialty-overlay">
+							<h3>Réathlétisation</h3>
+							<p>Accompagnement post-blessure en coordination avec les professionnels de santé</p>
+						</div>
+					</div>
+					
+					<div class="specialty-item">
+						<img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-4.0.3&auto=format&fit=crop" alt="Seniors" />
+						<div class="specialty-overlay">
+							<h3>Coaching seniors</h3>
+							<p>Programmes adaptés pour maintenir forme, autonomie et santé après 60 ans</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="testimonial-section">
+				<div class="testimonial-container">
+					<svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+					<p class="testimonial-text">Je m'engage à vous accompagner à chaque étape de votre transformation. Le chemin vers une meilleure version de soi-même n'est jamais facile, mais avec détermination, méthode et persévérance, tous vos objectifs sont à portée de main.</p>
+					<p class="testimonial-author">Votre coach</p>
+				</div>
+			</section>
+			
+			<section class="cta-section">
+				<h2>Prêt à commencer votre transformation ?</h2>
+				<p>Réservez dès maintenant votre séance de découverte gratuite</p>
+				<a href="/contact" class="cta-button">Prendre rendez-vous</a>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
-
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
-
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
-
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+<style>
+	main {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1em;
+	}
+	
+	.about-header {
+		text-align: center;
+		padding: 5em 1em;
+		margin-bottom: 3rem;
+		background-color: #f8f9fa;
+		border-radius: 8px;
+	}
+	
+	.about-header h1 {
+		font-size: 3rem;
+		margin-bottom: 0.5rem;
+		color: rgb(var(--black));
+	}
+	
+	.header-subtitle {
+		font-size: 1.2rem;
+		color: rgb(var(--gray));
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	
+	.profile-section {
+		margin-bottom: 5rem;
+	}
+	
+	.profile-grid {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 3rem;
+		align-items: center;
+	}
+	
+	.profile-image img {
+		width: 100%;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	.profile-content h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: var(--accent);
+	}
+	
+	.profile-content p {
+		margin-bottom: 1.5rem;
+		color: rgb(var(--gray-dark));
+		line-height: 1.6;
+	}
+	
+	.section-title {
+		text-align: center;
+		margin-bottom: 2.5rem;
+		position: relative;
+	}
+	
+	.section-title:after {
+		content: "";
+		display: block;
+		width: 80px;
+		height: 4px;
+		background-color: var(--accent);
+		margin: 0.5rem auto 0;
+	}
+	
+	.philosophy-section {
+		margin-bottom: 5rem;
+	}
+	
+	.philosophy-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+	
+	.philosophy-card {
+		background-color: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		text-align: center;
+		transition: transform 0.3s ease;
+	}
+	
+	.philosophy-card:hover {
+		transform: translateY(-5px);
+	}
+	
+	.card-icon {
+		width: 70px;
+		height: 70px;
+		background-color: rgba(255, 69, 0, 0.1);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 1.5rem;
+	}
+	
+	.card-icon svg {
+		width: 35px;
+		height: 35px;
+		fill: var(--accent);
+	}
+	
+	.philosophy-card h3 {
+		font-size: 1.3rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--black));
+	}
+	
+	.certifications-section {
+		margin-bottom: 5rem;
+		background-color: #f8f9fa;
+		padding: 4rem 2rem;
+		border-radius: 8px;
+	}
+	
+	.certifications-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+		gap: 2rem;
+	}
+	
+	.certification-item {
+		display: flex;
+		align-items: center;
+		background-color: white;
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+	}
+	
+	.certification-icon {
+		width: 50px;
+		height: 50px;
+		background-color: var(--accent);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 1.5rem;
+		flex-shrink: 0;
+	}
+	
+	.certification-icon svg {
+		width: 30px;
+		height: 30px;
+		fill: white;
+	}
+	
+	.certification-content h3 {
+		font-size: 1.1rem;
+		margin-bottom: 0.3rem;
+		color: rgb(var(--black));
+	}
+	
+	.certification-content p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+	}
+	
+	.specialties-section {
+		margin-bottom: 5rem;
+	}
+	
+	.specialties-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+	
+	.specialty-item {
+		position: relative;
+		height: 250px;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	
+	.specialty-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+	}
+	
+	.specialty-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+		padding: 1.5rem;
+		transition: all 0.3s ease;
+	}
+	
+	.specialty-item:hover img {
+		transform: scale(1.05);
+	}
+	
+	.specialty-overlay h3 {
+		color: white;
+		margin-bottom: 0.5rem;
+		font-size: 1.2rem;
+	}
+	
+	.specialty-overlay p {
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 0.9rem;
+		margin: 0;
+	}
+	
+	.testimonial-section {
+		margin-bottom: 5rem;
+	}
+	
+	.testimonial-container {
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+		padding: 2rem;
+		position: relative;
+	}
+	
+	.quote-icon {
+		width: 50px;
+		height: 50px;
+		fill: var(--accent);
+		opacity: 0.2;
+		margin-bottom: 1rem;
+	}
+	
+	.testimonial-text {
+		font-size: 1.5rem;
+		font-style: italic;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		color: rgb(var(--black));
+	}
+	
+	.testimonial-author {
+		font-weight: bold;
+		color: var(--accent);
+	}
+	
+	.cta-section {
+		text-align: center;
+		padding: 4rem 2rem;
+		background-color: #f8f9fa;
+		border-radius: 8px;
+		margin-bottom: 3rem;
+	}
+	
+	.cta-section h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--black));
+	}
+	
+	.cta-section p {
+		margin-bottom: 2rem;
+		font-size: 1.1rem;
+		color: rgb(var(--gray));
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.cta-button {
+		display: inline-block;
+		padding: 1rem 2rem;
+		background-color: var(--accent);
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+		border-radius: 4px;
+		transition: background-color 0.3s ease;
+	}
+	
+	.cta-button:hover {
+		background-color: var(--accent-dark);
+	}
+	
+	@media (max-width: 768px) {
+		.profile-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.certifications-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.testimonial-text {
+			font-size: 1.2rem;
+		}
+	}
+</style>

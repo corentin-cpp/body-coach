@@ -13,75 +13,227 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={`Blog Fitness | ${SITE_TITLE}`} description="Conseils, astuces et articles sur la fitness, la nutrition et le bien-être" />
 		<style>
 			main {
-				width: 960px;
+				width: 100%;
+				max-width: 1200px;
+				padding: 2em 1em;
 			}
-			ul {
+			
+			.blog-header {
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+			
+			.blog-header h1 {
+				font-size: 3rem;
+				margin-bottom: 0.5rem;
+				color: rgb(var(--black));
+			}
+			
+			.header-description {
+				font-size: 1.2rem;
+				color: rgb(var(--gray));
+				max-width: 600px;
+				margin: 0 auto;
+			}
+			
+			.categories {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 2rem;
+				justify-content: center;
+				gap: 1rem;
+				margin-bottom: 3rem;
+			}
+			
+			.category-button {
+				padding: 0.5rem 1rem;
+				background-color: #f1f1f1;
+				border-radius: 20px;
+				color: rgb(var(--gray-dark));
+				text-decoration: none;
+				transition: all 0.3s ease;
+				font-size: 0.9rem;
+			}
+			
+			.category-button:hover,
+			.category-button.active {
+				background-color: var(--accent);
+				color: white;
+			}
+			
+			.posts-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+				gap: 2.5rem;
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
 			}
-			ul li {
-				width: calc(50% - 1rem);
+			
+			.posts-grid li.featured {
+				grid-column: span 2;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 2rem;
+				align-items: center;
 			}
-			ul li * {
+			
+			.posts-grid li * {
 				text-decoration: none;
 				transition: 0.2s ease;
 			}
-			ul li:first-child {
+			
+			.posts-grid li.featured .post-image {
+				height: 100%;
+				max-height: 400px;
+			}
+			
+			.posts-grid li.featured .post-content {
+				padding: 2rem;
+			}
+			
+			.post-card {
+				background-color: white;
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				transition: transform 0.3s ease;
+			}
+			
+			.post-card:hover {
+				transform: translateY(-5px);
+			}
+			
+			.post-image {
 				width: 100%;
+				height: 200px;
+				overflow: hidden;
+			}
+			
+			.post-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.5s ease;
+			}
+			
+			.post-card:hover .post-image img {
+				transform: scale(1.05);
+			}
+			
+			.post-content {
+				padding: 1.5rem;
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.post-category {
+				display: inline-block;
+				font-size: 0.8rem;
+				padding: 0.3rem 0.8rem;
+				background-color: rgba(255, 69, 0, 0.1);
+				color: var(--accent);
+				border-radius: 20px;
 				margin-bottom: 1rem;
-				text-align: center;
 			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
+			
 			.title {
-				margin: 0;
+				margin: 0 0 0.5rem 0;
 				color: rgb(var(--black));
-				line-height: 1;
+				line-height: 1.2;
+				font-size: 1.5rem;
 			}
+			
+			.post-excerpt {
+				color: rgb(var(--gray));
+				margin-bottom: 1rem;
+				flex-grow: 1;
+			}
+			
 			.date {
 				margin: 0;
 				color: rgb(var(--gray));
+				font-size: 0.9rem;
+				display: flex;
+				align-items: center;
 			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
+			
+			.date svg {
+				width: 16px;
+				height: 16px;
+				margin-right: 5px;
+				fill: rgb(var(--gray));
 			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
+			
+			.read-more {
+				display: inline-flex;
+				align-items: center;
+				color: var(--accent);
+				font-weight: 600;
+				margin-top: 1rem;
 			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
+			
+			.read-more svg {
+				width: 18px;
+				height: 18px;
+				margin-left: 5px;
+				fill: var(--accent);
+				transition: transform 0.3s ease;
+			}
+			
+			.post-card:hover .read-more svg {
+				transform: translateX(3px);
+			}
+			
+			.cta-section {
+				text-align: center;
+				margin-top: 5rem;
+				padding: 3rem;
+				background-color: #f8f9fa;
+				border-radius: 8px;
+			}
+			
+			.cta-section h2 {
+				margin-bottom: 1rem;
+				font-size: 2rem;
+				color: rgb(var(--black));
+			}
+			
+			.cta-section p {
+				margin-bottom: 2rem;
+				max-width: 600px;
+				margin-left: auto;
+				margin-right: auto;
+				color: rgb(var(--gray));
+			}
+			
+			.cta-button {
+				display: inline-block;
+				padding: 1rem 2rem;
+				background-color: var(--accent);
+				color: white;
+				text-decoration: none;
+				font-weight: bold;
+				border-radius: 4px;
+				transition: background-color 0.3s ease;
+			}
+			
+			.cta-button:hover {
+				background-color: var(--accent-dark);
+			}
+			
+			@media (max-width: 768px) {
+				.posts-grid li.featured {
+					grid-column: span 1;
+					grid-template-columns: 1fr;
 				}
 			}
 		</style>
@@ -89,24 +241,59 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
+			<section class="blog-header">
+				<h1>Blog Fitness</h1>
+				<p class="header-description">Conseils, astuces et articles sur la remise en forme, la nutrition et le bien-être</p>
+				
+				<div class="categories">
+					<a href="#" class="category-button active">Tous les articles</a>
+					<a href="#" class="category-button">Entraînement</a>
+					<a href="#" class="category-button">Nutrition</a>
+					<a href="#" class="category-button">Motivation</a>
+					<a href="#" class="category-button">Récupération</a>
+					<a href="#" class="category-button">Témoignages</a>
+				</div>
+			</section>
+			
 			<section>
-				<ul>
+				<ul class="posts-grid">
 					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+						posts.map((post, index) => (
+							<li class={index === 0 ? 'featured' : ''}>
+								<a href={`/blog/${post.id}/`} class="post-card">
+									<div class="post-image">
+										{post.data.heroImage && (
+											<Image width={720} height={360} src={post.data.heroImage} alt="" />
+										)}
+									</div>
+									<div class="post-content">
+										<span class="post-category">
+											{post.data.category || 'Fitness'}
+										</span>
+										<h3 class="title">{post.data.title}</h3>
+										<p class="post-excerpt">{post.data.description || 'Découvrez cet article passionnant sur le fitness et la nutrition pour améliorer votre santé et vos performances.'}</p>
+										<div class="post-meta">
+											<p class="date">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+												<FormattedDate date={post.data.pubDate} />
+											</p>
+											<span class="read-more">
+												Lire l'article
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg>
+											</span>
+										</div>
+									</div>
 								</a>
 							</li>
 						))
 					}
 				</ul>
+			</section>
+			
+			<section class="cta-section">
+				<h2>Vous avez des questions sur votre entraînement ?</h2>
+				<p>N'hésitez pas à me contacter pour une consultation personnalisée ou pour programmer une séance d'évaluation gratuite.</p>
+				<a href="/contact" class="cta-button">Prendre rendez-vous</a>
 			</section>
 		</main>
 		<Footer />

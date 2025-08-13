@@ -1,0 +1,281 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={`Services | ${SITE_TITLE}`} description="Découvrez les services de coaching personnalisé que je propose" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="page-header">
+				<h1>Nos services</h1>
+				<p class="header-description">Des programmes adaptés à vos besoins spécifiques</p>
+			</section>
+			
+			<section class="services-section">
+				<div class="service-item">
+					<div class="service-image">
+						<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop" alt="Coaching individuel" />
+					</div>
+					<div class="service-content">
+						<h2>Coaching individuel</h2>
+						<p>Le coaching individuel est la solution la plus efficace pour atteindre rapidement vos objectifs. Lors de séances en face à face, je vous guide à travers des exercices personnalisés adaptés à votre condition physique et à vos objectifs.</p>
+						<ul class="service-features">
+							<li>Évaluation complète de votre condition physique</li>
+							<li>Programme d'entraînement sur mesure</li>
+							<li>Suivi nutritionnel personnalisé</li>
+							<li>Ajustements réguliers selon vos progrès</li>
+							<li>Support par messagerie entre les séances</li>
+						</ul>
+						<a href="/contact" class="cta-button">Prendre rendez-vous</a>
+					</div>
+				</div>
+				
+				<div class="service-item reverse">
+					<div class="service-image">
+						<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop" alt="Coaching en petit groupe" />
+					</div>
+					<div class="service-content">
+						<h2>Coaching en petit groupe</h2>
+						<p>Bénéficiez de l'émulation du groupe tout en recevant une attention personnalisée. Les séances en petit groupe (3 à 5 personnes) sont idéales pour rester motivé et partager l'expérience avec d'autres.</p>
+						<ul class="service-features">
+							<li>Séances dynamiques et variées</li>
+							<li>Émulation et motivation de groupe</li>
+							<li>Tarifs avantageux</li>
+							<li>Horaires flexibles</li>
+							<li>Ambiance conviviale et stimulante</li>
+						</ul>
+						<a href="/contact" class="cta-button">Réserver une séance</a>
+					</div>
+				</div>
+				
+				<div class="service-item">
+					<div class="service-image">
+						<img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop" alt="Coaching nutritionnel" />
+					</div>
+					<div class="service-content">
+						<h2>Coaching nutritionnel</h2>
+						<p>La nutrition est un élément fondamental de votre transformation. Mon approche nutritionnelle ne se limite pas à un régime restrictif, mais vise à établir une relation saine avec la nourriture pour des résultats durables.</p>
+						<ul class="service-features">
+							<li>Analyse de vos habitudes alimentaires actuelles</li>
+							<li>Plan nutritionnel adapté à vos objectifs</li>
+							<li>Recettes et idées de repas équilibrés</li>
+							<li>Suivi hebdomadaire de vos progrès</li>
+							<li>Ajustements selon vos préférences et mode de vie</li>
+						</ul>
+						<a href="/contact" class="cta-button">En savoir plus</a>
+					</div>
+				</div>
+				
+				<div class="service-item reverse">
+					<div class="service-image">
+						<img src="https://images.unsplash.com/photo-1591343395082-e120087004b4?ixlib=rb-4.0.3&auto=format&fit=crop" alt="Programmes en ligne" />
+					</div>
+					<div class="service-content">
+						<h2>Programmes en ligne</h2>
+						<p>Vous préférez vous entraîner de façon autonome ou vous n'êtes pas disponible pour des séances en présentiel ? Mes programmes en ligne vous offrent flexibilité et efficacité, où que vous soyez.</p>
+						<ul class="service-features">
+							<li>Programmes d'entraînement complets à suivre à domicile</li>
+							<li>Vidéos explicatives pour chaque exercice</li>
+							<li>Application mobile pour suivre vos progrès</li>
+							<li>Plan nutritionnel complémentaire</li>
+							<li>Suivi mensuel par visioconférence</li>
+						</ul>
+						<a href="/tarifs" class="cta-button">Voir les formules</a>
+					</div>
+				</div>
+			</section>
+			
+			<section class="faq-section">
+				<h2 class="section-title">Questions fréquentes</h2>
+				<div class="faq-grid">
+					<div class="faq-item">
+						<h3>Combien de séances par semaine sont recommandées ?</h3>
+						<p>Pour des résultats optimaux, je recommande 2 à 3 séances par semaine. Cependant, le programme sera adapté à votre disponibilité et à votre niveau de condition physique actuel.</p>
+					</div>
+					<div class="faq-item">
+						<h3>Faut-il déjà être sportif pour commencer ?</h3>
+						<p>Absolument pas ! Mes programmes sont adaptés à tous les niveaux, du débutant complet au sportif confirmé. L'important est votre motivation à progresser.</p>
+					</div>
+					<div class="faq-item">
+						<h3>Comment se déroule la première séance ?</h3>
+						<p>La première séance est consacrée à l'évaluation de votre condition physique, à la définition de vos objectifs et à la mise en place d'un plan d'action personnalisé.</p>
+					</div>
+					<div class="faq-item">
+						<h3>Quel équipement est nécessaire ?</h3>
+						<p>Pour les séances en présentiel, aucun équipement n'est nécessaire, tout est fourni. Pour les programmes à domicile, une liste d'équipements basiques vous sera suggérée.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2em 1em;
+	}
+	
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	
+	.page-header h1 {
+		font-size: 3rem;
+		margin-bottom: 0.5rem;
+		color: rgb(var(--black));
+	}
+	
+	.header-description {
+		font-size: 1.2rem;
+		color: rgb(var(--gray));
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	
+	.services-section {
+		display: flex;
+		flex-direction: column;
+		gap: 6rem;
+		margin-bottom: 4rem;
+	}
+	
+	.service-item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+	
+	.service-item.reverse {
+		direction: rtl;
+	}
+	
+	.service-item.reverse .service-content {
+		direction: ltr;
+	}
+	
+	.service-image img {
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	.service-content h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: var(--accent);
+	}
+	
+	.service-content p {
+		margin-bottom: 1.5rem;
+		color: rgb(var(--gray-dark));
+		line-height: 1.6;
+	}
+	
+	.service-features {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 2rem;
+	}
+	
+	.service-features li {
+		position: relative;
+		padding-left: 2rem;
+		margin-bottom: 0.5rem;
+		line-height: 1.5;
+	}
+	
+	.service-features li::before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		color: var(--accent);
+		font-weight: bold;
+	}
+	
+	.cta-button {
+		display: inline-block;
+		padding: 0.8rem 1.5rem;
+		background-color: var(--accent);
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+		border-radius: 4px;
+		transition: background-color 0.3s ease;
+	}
+	
+	.cta-button:hover {
+		background-color: var(--accent-dark);
+	}
+	
+	.section-title {
+		text-align: center;
+		margin-bottom: 2rem;
+		position: relative;
+	}
+	
+	.section-title:after {
+		content: "";
+		display: block;
+		width: 80px;
+		height: 4px;
+		background-color: var(--accent);
+		margin: 0.5rem auto 0;
+	}
+	
+	.faq-section {
+		background-color: #f9f9f9;
+		padding: 4rem 2rem;
+		border-radius: 8px;
+		margin-top: 2rem;
+	}
+	
+	.faq-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+		gap: 2rem;
+	}
+	
+	.faq-item {
+		background-color: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+	}
+	
+	.faq-item h3 {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+		color: var(--accent);
+	}
+	
+	@media (max-width: 768px) {
+		.service-item,
+		.service-item.reverse {
+			grid-template-columns: 1fr;
+			direction: ltr;
+		}
+		
+		.faq-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.service-image img {
+			height: 300px;
+		}
+	}
+</style>

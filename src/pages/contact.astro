@@ -1,0 +1,445 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={`Contact | ${SITE_TITLE}`} description="Prenez rendez-vous pour une séance de coaching sportif personnalisée" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="page-header">
+				<h1>Prendre rendez-vous</h1>
+				<p class="header-description">Faites le premier pas vers vos objectifs</p>
+			</section>
+			
+			<div class="contact-container">
+				<section class="contact-info">
+					<h2>Comment me contacter</h2>
+					<p>Pour toute question ou pour prendre rendez-vous, n'hésitez pas à me contacter par téléphone, email ou via le formulaire ci-contre.</p>
+					
+					<div class="contact-methods">
+						<div class="contact-method">
+							<div class="contact-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+							</div>
+							<div class="contact-text">
+								<h3>Téléphone</h3>
+								<p>06 12 34 56 78</p>
+							</div>
+						</div>
+						
+						<div class="contact-method">
+							<div class="contact-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+							</div>
+							<div class="contact-text">
+								<h3>Email</h3>
+								<p>contact@coach-sportif.com</p>
+							</div>
+						</div>
+						
+						<div class="contact-method">
+							<div class="contact-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+							</div>
+							<div class="contact-text">
+								<h3>Adresse</h3>
+								<p>123 Rue de la Forme<br>75001 Paris</p>
+							</div>
+						</div>
+						
+						<div class="contact-method">
+							<div class="contact-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+							</div>
+							<div class="contact-text">
+								<h3>Horaires</h3>
+								<p>Lundi-Vendredi: 8h-21h<br>Samedi: 9h-18h<br>Dimanche: Sur RDV</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="social-links">
+						<h3>Retrouvez-moi sur les réseaux</h3>
+						<div class="social-icons">
+							<a href="https://instagram.com/" target="_blank" class="social-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2C5.6 4 4 5.6 4 7.6v8.8C4 18.4 5.6 20 7.6 20h8.8c2 0 3.6-1.6 3.6-3.6V7.6C20 5.6 18.4 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 7c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5zm0 2c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+							</a>
+							<a href="https://facebook.com/" target="_blank" class="social-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"/></svg>
+							</a>
+							<a href="https://youtube.com/" target="_blank" class="social-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+							</a>
+						</div>
+					</div>
+				</section>
+				
+				<section class="contact-form">
+					<h2>Formulaire de contact</h2>
+					<form action="#" method="POST" id="contact-form">
+						<div class="form-group">
+							<label for="name">Nom</label>
+							<input type="text" id="name" name="name" required>
+						</div>
+						
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+						
+						<div class="form-group">
+							<label for="phone">Téléphone</label>
+							<input type="tel" id="phone" name="phone">
+						</div>
+						
+						<div class="form-group">
+							<label for="service">Service souhaité</label>
+							<select id="service" name="service">
+								<option value="">Sélectionnez un service</option>
+								<option value="coaching-individual">Coaching individuel</option>
+								<option value="coaching-duo">Coaching en duo</option>
+								<option value="coaching-group">Coaching en groupe</option>
+								<option value="nutrition">Consultation nutrition</option>
+								<option value="online">Programme en ligne</option>
+								<option value="other">Autre / Question</option>
+							</select>
+						</div>
+						
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea id="message" name="message" rows="5" required></textarea>
+						</div>
+						
+						<div class="form-group checkbox">
+							<input type="checkbox" id="consent" name="consent" required>
+							<label for="consent">J'accepte que mes données soient utilisées pour me recontacter</label>
+						</div>
+						
+						<button type="submit" class="submit-button">Envoyer ma demande</button>
+					</form>
+				</section>
+			</div>
+			
+			<section class="map-section">
+				<h2 class="section-title">Où me trouver</h2>
+				<div class="map-container">
+					<div class="responsive-map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.991440608772!2d2.320875375712974!3d48.859375271330986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc4a6680e69%3A0xcb686e6b9e212a08!2s29%20Rue%20du%20Louvre%2C%2075002%20Paris!5e0!3m2!1sen!2sfr!4v1682171669591!5m2!1sen!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+			</section>
+			
+			<section class="faq-section">
+				<h2 class="section-title">Questions fréquentes</h2>
+				
+				<div class="faq-grid">
+					<div class="faq-item">
+						<h3>Quelle est la durée d'une séance ?</h3>
+						<p>Les séances individuelles durent généralement 1 heure. Cela comprend un échauffement, la séance d'entraînement et des étirements.</p>
+					</div>
+					
+					<div class="faq-item">
+						<h3>Puis-je annuler ou reporter un rendez-vous ?</h3>
+						<p>Oui, vous pouvez annuler ou reporter un rendez-vous jusqu'à 24h à l'avance sans frais. En cas d'annulation tardive, la séance sera décomptée.</p>
+					</div>
+					
+					<div class="faq-item">
+						<h3>Comment se déroule le premier rendez-vous ?</h3>
+						<p>Le premier rendez-vous est une séance d'évaluation pour définir vos objectifs, analyser votre condition physique et élaborer un programme adapté.</p>
+					</div>
+					
+					<div class="faq-item">
+						<h3>Faut-il apporter quelque chose pour les séances ?</h3>
+						<p>Il est conseillé d'apporter une tenue confortable, une serviette et une bouteille d'eau. Tout le matériel d'entraînement est fourni.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2em 1em;
+	}
+	
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	
+	.page-header h1 {
+		font-size: 3rem;
+		margin-bottom: 0.5rem;
+		color: rgb(var(--black));
+	}
+	
+	.header-description {
+		font-size: 1.2rem;
+		color: rgb(var(--gray));
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	
+	.contact-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		margin-bottom: 4rem;
+	}
+	
+	.contact-info h2,
+	.contact-form h2 {
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+		color: var(--accent);
+	}
+	
+	.contact-methods {
+		margin: 2rem 0;
+	}
+	
+	.contact-method {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1.5rem;
+	}
+	
+	.contact-icon {
+		width: 50px;
+		height: 50px;
+		background-color: var(--accent);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 1rem;
+	}
+	
+	.contact-icon svg {
+		fill: white;
+		width: 24px;
+		height: 24px;
+	}
+	
+	.contact-text h3 {
+		font-size: 1.2rem;
+		margin-bottom: 0.3rem;
+		color: rgb(var(--black));
+	}
+	
+	.contact-text p {
+		margin: 0;
+		color: rgb(var(--gray-dark));
+	}
+	
+	.social-links h3 {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--black));
+	}
+	
+	.social-icons {
+		display: flex;
+		gap: 1rem;
+	}
+	
+	.social-icon {
+		width: 45px;
+		height: 45px;
+		background-color: #f0f0f0;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+	}
+	
+	.social-icon:hover {
+		background-color: var(--accent);
+	}
+	
+	.social-icon:hover svg {
+		fill: white;
+	}
+	
+	.social-icon svg {
+		width: 24px;
+		height: 24px;
+		fill: var(--accent);
+		transition: fill 0.3s ease;
+	}
+	
+	/* Form styling */
+	.contact-form {
+		background-color: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+	
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+	
+	.form-group label {
+		display: block;
+		margin-bottom: 0.5rem;
+		font-weight: 600;
+		color: rgb(var(--black));
+	}
+	
+	.form-group.checkbox {
+		display: flex;
+		align-items: center;
+	}
+	
+	.form-group.checkbox label {
+		margin: 0 0 0 0.5rem;
+		font-weight: normal;
+		font-size: 0.9rem;
+	}
+	
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	select,
+	textarea {
+		width: 100%;
+		padding: 0.8rem;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		font-size: 1rem;
+		font-family: inherit;
+	}
+	
+	input:focus,
+	select:focus,
+	textarea:focus {
+		outline: none;
+		border-color: var(--accent);
+		box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.1);
+	}
+	
+	.submit-button {
+		display: block;
+		width: 100%;
+		padding: 1rem;
+		background-color: var(--accent);
+		color: white;
+		border: none;
+		border-radius: 4px;
+		font-size: 1.1rem;
+		font-weight: bold;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+	
+	.submit-button:hover {
+		background-color: var(--accent-dark);
+	}
+	
+	/* Map section */
+	.map-section {
+		margin-bottom: 4rem;
+	}
+	
+	.section-title {
+		text-align: center;
+		margin-bottom: 2rem;
+		position: relative;
+	}
+	
+	.section-title:after {
+		content: "";
+		display: block;
+		width: 80px;
+		height: 4px;
+		background-color: var(--accent);
+		margin: 0.5rem auto 0;
+	}
+	
+	.map-container {
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+	
+	.responsive-map {
+		position: relative;
+		overflow: hidden;
+		padding-top: 56.25%; /* 16:9 aspect ratio */
+	}
+	
+	.responsive-map iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+	
+	/* FAQ section */
+	.faq-section {
+		background-color: #f9f9f9;
+		padding: 4rem 2rem;
+		border-radius: 8px;
+	}
+	
+	.faq-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+		gap: 2rem;
+	}
+	
+	.faq-item {
+		background-color: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+	}
+	
+	.faq-item h3 {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+		color: var(--accent);
+	}
+	
+	@media (max-width: 900px) {
+		.contact-container {
+			grid-template-columns: 1fr;
+		}
+		
+		.faq-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.social-links {
+			margin-bottom: 2rem;
+		}
+	}
+</style>
+
+<script>
+	document.getElementById('contact-form').addEventListener('submit', function(e) {
+		e.preventDefault();
+		
+		// Ici, vous ajouteriez le code pour envoyer le formulaire
+		// Par exemple, via fetch API ou en utilisant un service comme FormSpree
+		
+		alert('Merci pour votre message ! Nous vous contacterons très prochainement.');
+		this.reset();
+	});
+</script>

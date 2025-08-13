@@ -1,0 +1,450 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={`Tarifs | ${SITE_TITLE}`} description="Découvrez nos différentes formules de coaching sportif" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="page-header">
+				<h1>Tarifs et formules</h1>
+				<p class="header-description">Investissez dans votre santé et votre bien-être</p>
+			</section>
+			
+			<section class="pricing-info">
+				<p>Tous mes programmes sont conçus pour vous accompagner vers vos objectifs de façon progressive et durable. Chaque formule comprend une évaluation initiale approfondie et un suivi personnalisé.</p>
+				<p>Un premier rendez-vous de découverte de 30 minutes est <strong>offert</strong> pour discuter de vos objectifs et déterminer la formule la plus adaptée à votre situation.</p>
+			</section>
+			
+			<section class="pricing-cards">
+				<div class="pricing-card">
+					<div class="card-header">
+						<h2>Séance individuelle</h2>
+						<p class="price">75€</p>
+					</div>
+					<div class="card-content">
+						<p class="price-description">Par séance d'une heure</p>
+						<ul class="price-features">
+							<li>Coaching personnalisé 1:1</li>
+							<li>Programme adapté à vos objectifs</li>
+							<li>Suivi de vos progrès</li>
+							<li>Conseils nutritionnels</li>
+							<li>Flexibilité des horaires</li>
+						</ul>
+						<p class="ideal-for">Idéal pour essayer ou en complément d'un entraînement autonome</p>
+						<a href="/contact" class="cta-button">Réserver</a>
+					</div>
+				</div>
+				
+				<div class="pricing-card popular">
+					<div class="popular-badge">Populaire</div>
+					<div class="card-header">
+						<h2>Pack Intensif</h2>
+						<p class="price">345€</p>
+					</div>
+					<div class="card-content">
+						<p class="price-description">5 séances (69€/séance)</p>
+						<ul class="price-features">
+							<li>Coaching personnalisé 1:1</li>
+							<li>Programme complet sur 5 séances</li>
+							<li>Bilan à mi-parcours</li>
+							<li>Plan nutritionnel détaillé</li>
+							<li>Support par messagerie</li>
+							<li>Validité : 2 mois</li>
+						</ul>
+						<p class="ideal-for">Idéal pour lancer une transformation ou franchir un plateau</p>
+						<a href="/contact" class="cta-button">Choisir cette formule</a>
+					</div>
+				</div>
+				
+				<div class="pricing-card">
+					<div class="card-header">
+						<h2>Abonnement Mensuel</h2>
+						<p class="price">240€</p>
+					</div>
+					<div class="card-content">
+						<p class="price-description">4 séances par mois (60€/séance)</p>
+						<ul class="price-features">
+							<li>1 séance par semaine</li>
+							<li>Programme évolutif</li>
+							<li>Ajustements réguliers</li>
+							<li>Suivi nutritionnel complet</li>
+							<li>Accès à l'application de suivi</li>
+							<li>Engagement minimum 3 mois</li>
+						</ul>
+						<p class="ideal-for">Idéal pour un accompagnement régulier et des résultats durables</p>
+						<a href="/contact" class="cta-button">S'abonner</a>
+					</div>
+				</div>
+			</section>
+			
+			<section class="other-services">
+				<h2 class="section-title">Autres services</h2>
+				
+				<div class="service-table">
+					<div class="table-row header">
+						<div class="table-cell">Service</div>
+						<div class="table-cell">Description</div>
+						<div class="table-cell">Prix</div>
+						<div class="table-cell"></div>
+					</div>
+					
+					<div class="table-row">
+						<div class="table-cell"><strong>Coaching en duo</strong></div>
+						<div class="table-cell">Séances pour 2 personnes, programme adapté aux deux profils</div>
+						<div class="table-cell">110€<br><span class="small">(55€/personne)</span></div>
+						<div class="table-cell"><a href="/contact" class="small-button">Réserver</a></div>
+					</div>
+					
+					<div class="table-row">
+						<div class="table-cell"><strong>Petit groupe<br>(3-5 personnes)</strong></div>
+						<div class="table-cell">Séances dynamiques pour petits groupes avec objectifs similaires</div>
+						<div class="table-cell">À partir de 35€<br><span class="small">par personne</span></div>
+						<div class="table-cell"><a href="/contact" class="small-button">Infos</a></div>
+					</div>
+					
+					<div class="table-row">
+						<div class="table-cell"><strong>Programme en ligne</strong></div>
+						<div class="table-cell">Programme personnalisé à suivre en autonomie avec suivi à distance</div>
+						<div class="table-cell">129€<br><span class="small">par mois</span></div>
+						<div class="table-cell"><a href="/contact" class="small-button">Commander</a></div>
+					</div>
+					
+					<div class="table-row">
+						<div class="table-cell"><strong>Consultation nutrition</strong></div>
+						<div class="table-cell">Analyse de vos habitudes et création d'un plan alimentaire personnalisé</div>
+						<div class="table-cell">90€</div>
+						<div class="table-cell"><a href="/contact" class="small-button">Réserver</a></div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="faq-section">
+				<h2 class="section-title">Questions fréquentes</h2>
+				
+				<div class="faq-item">
+					<h3>Quels moyens de paiement acceptez-vous ?</h3>
+					<p>J'accepte les paiements par carte bancaire, virement, espèces et chèques. Les abonnements peuvent être réglés en plusieurs fois sans frais.</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3>Quelle est votre politique d'annulation ?</h3>
+					<p>Les séances peuvent être annulées ou reportées jusqu'à 24 heures à l'avance sans frais. Toute annulation moins de 24 heures avant la séance entraîne la facturation de celle-ci, sauf en cas de force majeure.</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3>Est-il possible d'avoir un programme sur mesure ?</h3>
+					<p>Absolument ! Si aucune formule ne correspond exactement à vos besoins, contactez-moi pour discuter d'un programme entièrement personnalisé.</p>
+				</div>
+				
+				<div class="cta-block">
+					<h2>Vous avez des questions ?</h2>
+					<p>N'hésitez pas à me contacter pour en savoir plus ou prendre rendez-vous pour une séance découverte gratuite</p>
+					<a href="/contact" class="cta-button">Contactez-moi</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2em 1em;
+	}
+	
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	
+	.page-header h1 {
+		font-size: 3rem;
+		margin-bottom: 0.5rem;
+		color: rgb(var(--black));
+	}
+	
+	.header-description {
+		font-size: 1.2rem;
+		color: rgb(var(--gray));
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	
+	.pricing-info {
+		max-width: 800px;
+		margin: 0 auto 3rem;
+		text-align: center;
+		color: rgb(var(--gray-dark));
+	}
+	
+	.pricing-info p {
+		margin-bottom: 1rem;
+	}
+	
+	.pricing-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+	
+	.pricing-card {
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		position: relative;
+	}
+	
+	.pricing-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+	}
+	
+	.pricing-card.popular {
+		border: 2px solid var(--accent);
+		transform: scale(1.03);
+	}
+	
+	.pricing-card.popular:hover {
+		transform: scale(1.05) translateY(-5px);
+	}
+	
+	.popular-badge {
+		position: absolute;
+		top: 12px;
+		right: -30px;
+		background-color: var(--accent);
+		color: white;
+		padding: 0.5rem 2rem;
+		transform: rotate(45deg);
+		font-weight: bold;
+		font-size: 0.8rem;
+	}
+	
+	.card-header {
+		padding: 2rem;
+		background-color: #f8f9fa;
+		text-align: center;
+		border-bottom: 1px solid #eee;
+	}
+	
+	.card-header h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--black));
+	}
+	
+	.price {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--accent);
+		margin: 0;
+	}
+	
+	.card-content {
+		padding: 2rem;
+	}
+	
+	.price-description {
+		text-align: center;
+		color: rgb(var(--gray));
+		margin-bottom: 1.5rem;
+	}
+	
+	.price-features {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 2rem;
+	}
+	
+	.price-features li {
+		position: relative;
+		padding-left: 2rem;
+		margin-bottom: 0.8rem;
+		line-height: 1.5;
+	}
+	
+	.price-features li::before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		color: var(--accent);
+		font-weight: bold;
+	}
+	
+	.ideal-for {
+		text-align: center;
+		font-style: italic;
+		margin-bottom: 1.5rem;
+		color: rgb(var(--gray));
+	}
+	
+	.cta-button {
+		display: block;
+		padding: 0.8rem 1.5rem;
+		background-color: var(--accent);
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+		border-radius: 4px;
+		transition: background-color 0.3s ease;
+		text-align: center;
+	}
+	
+	.cta-button:hover {
+		background-color: var(--accent-dark);
+	}
+	
+	.section-title {
+		text-align: center;
+		margin-bottom: 2rem;
+		position: relative;
+	}
+	
+	.section-title:after {
+		content: "";
+		display: block;
+		width: 80px;
+		height: 4px;
+		background-color: var(--accent);
+		margin: 0.5rem auto 0;
+	}
+	
+	.other-services {
+		margin-bottom: 4rem;
+	}
+	
+	.service-table {
+		background-color: white;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+	
+	.table-row {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr 1fr;
+		border-bottom: 1px solid #eee;
+	}
+	
+	.table-row.header {
+		background-color: #f8f9fa;
+		font-weight: 600;
+	}
+	
+	.table-row:last-child {
+		border-bottom: none;
+	}
+	
+	.table-cell {
+		padding: 1.2rem;
+		align-self: center;
+	}
+	
+	.small {
+		font-size: 0.8rem;
+	}
+	
+	.small-button {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		background-color: var(--accent);
+		color: white;
+		text-decoration: none;
+		font-size: 0.9rem;
+		border-radius: 4px;
+		transition: background-color 0.3s ease;
+	}
+	
+	.small-button:hover {
+		background-color: var(--accent-dark);
+	}
+	
+	.faq-section {
+		background-color: #f9f9f9;
+		padding: 4rem 2rem;
+		border-radius: 8px;
+	}
+	
+	.faq-item {
+		background-color: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+		margin-bottom: 1.5rem;
+	}
+	
+	.faq-item h3 {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+		color: var(--accent);
+	}
+	
+	.faq-item:last-child {
+		margin-bottom: 0;
+	}
+	
+	.cta-block {
+		text-align: center;
+		margin-top: 3rem;
+		padding: 2rem;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+	}
+	
+	.cta-block h2 {
+		margin-bottom: 1rem;
+	}
+	
+	.cta-block p {
+		margin-bottom: 1.5rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.cta-block .cta-button {
+		display: inline-block;
+		max-width: 200px;
+		margin: 0 auto;
+	}
+	
+	@media (max-width: 768px) {
+		.table-row {
+			grid-template-columns: 1fr;
+			padding: 1rem 0;
+		}
+		
+		.table-row.header {
+			display: none;
+		}
+		
+		.table-cell {
+			padding: 0.5rem 1rem;
+			text-align: center;
+		}
+		
+		.table-cell:first-child {
+			font-weight: bold;
+			padding-top: 1.5rem;
+		}
+		
+		.table-cell:last-child {
+			padding-bottom: 1.5rem;
+		}
+	}
+</style>
